@@ -48,7 +48,7 @@ Add the Required Permissions: In the file, add the following lines to allow memb
 
 ```
 cd /etc/sudoers.d
-sudo echo "%ivolve_group ALL=(ALL) NOPASSWD:/usr/bin/apt install nginx , /usr/bin/apt run nginx" >> /etc/sudoers.d/ivolve
+sudo echo "ivolve_user ALL=(ALL) NOPASSWD:/usr/bin/apt install nginx , /usr/bin/systemctl start nginx" >> /etc/sudoers.d/ivolve
 ```
 
 Explanation:
@@ -79,6 +79,9 @@ sudo apt run nginx
 ```
 
 If the configuration is correct, the commands will run without prompting for a password.
+
+![image](https://github.com/user-attachments/assets/f7201325-c758-4716-82e9-f424242940cd)
+
 
 # Additional Notes:
 -Why Use /etc/sudoers.d/?: Adding configurations to /etc/sudoers.d/ is a modular way to manage sudo permissions, making it easier to keep track of changes for specific users or groups.
