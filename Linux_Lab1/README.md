@@ -23,7 +23,9 @@ We will create a group called group_ivolve and add the new user to this group, w
 sudo groupadd group_ivolve
 tail -n 1 /etc/groups
 ```
+
 2. Confirm group is created:
+
 ![image](https://github.com/user-attachments/assets/cf8c7d6b-03bb-4da4-881e-1cfe9f6a884f)
 
 3.To add the user ivolve_user to the ivolve_group group, use the following command:
