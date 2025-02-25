@@ -50,7 +50,11 @@ Add the Required Permissions: In the file, add the following lines to allow memb
 
 ```
 cd /etc/sudoers.d
-sudo echo "ivolve_user ALL=(ALL) NOPASSWD:/usr/bin/apt install nginx , /usr/bin/systemctl start nginx" >> /etc/sudoers.d/ivolve
+sudo echo "user_ivolve ALL=(ALL) NOPASSWD:/usr/bin/apt install nginx , /usr/bin/systemctl start nginx" >> /etc/sudoers.d/ivolve
+
+OR
+
+sudo echo "%group_ivolve ALL=(ALL) NOPASSWD:/usr/bin/apt install nginx , /usr/bin/systemctl start nginx" >> /etc/sudoers.d/ivolve
 ```
 
 Explanation:
