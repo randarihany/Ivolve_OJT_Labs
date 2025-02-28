@@ -1,6 +1,48 @@
 Step 1: Create the Shell Script
 Open your terminal and create a new shell script file, e.g., mysql_backup.sh:
 
+```
+crontab - l
+```
+
+
+![image](https://github.com/user-attachments/assets/ea082a50-c1f8-41c5-b139-52e934495d62)
+
+Script
+```
+#!/bin/bash
+
+# Set MySQL user and password
+MYSQL_USER="root"  # MySQL username
+MYSQL_PASS="randa"  # MySQL password
+MYSQL_DB="my_database"  # MySQL database name
+
+# Set backup directory
+BACKUP_DIR="/home/randa/mysql_Backups"
+
+# backup directory
+DATE=$(date +\%F)  # Current date in YYYY-MM-DD format
+BACKUP_FILE="${BACKUP_DIR}/${MYSQL_DB}_backup_${DATE}.sql"
+
+# Create backup directory if it doesn't exist
+mkdir -p $BACKUP_DIR
+
+# Run the mysqldump command to backup the database
+mysqldump -u$MYSQL_USER -p$MYSQL_PASS $MYSQL_DB > $BACKUP_FILE
+
+# Check if the backup was successful
+if [ $? -eq 0 ]; then
+  echo "Backup of database $MYSQL_DB completed successfully at $(date)" >> ${BACKUP_DIR}/backup.log
+else
+  echo "Backup of database $MYSQL_DB failed at $(date)" >> ${BACKUP_DIR}/backup.log
+fi
+
+```
+
+![image](https://github.com/user-attachments/assets/789ee139-58ab-459a-b331-a7dbb1852ca7)
+
+
+
 bash
 Copy
 nano /path/to/your/script/mysql_backup.sh
@@ -8,8 +50,6 @@ Replace /path/to/your/script/ with the desired path where you want to save the s
 
 Add the following content to the script:
 
-bash
-Copy
 #!/bin/bash
 
 # Set MySQL user and password
