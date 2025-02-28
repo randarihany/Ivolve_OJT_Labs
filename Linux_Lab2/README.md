@@ -152,6 +152,16 @@ Copy
 cat /path/to/backup/directory/backup.log
 This log will include messages like:
 
+![image](https://github.com/user-attachments/assets/c659f51b-bb9a-4e07-a1e2-1b62dedbf9fa)
+
+## File created:
+![image](https://github.com/user-attachments/assets/cb90d34e-d1b2-4a49-9cf2-1061282fbab0)
+
+## part of output that shows current values in db:
+![image](https://github.com/user-attachments/assets/fc26ba65-fc44-4494-9b5f-8490a97c07db)
+
+
+
 Backup of database your_database_name completed successfully at ...
 Backup of database your_database_name failed at ... (in case of any issues).
 Conclusion
