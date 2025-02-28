@@ -1,5 +1,6 @@
 #IP Range Ping Script
-Description
+
+#Description
 This bash script loops through a specified IP range (from 192.168.227.0 to 192.168.227.255) and pings each IP address in the range to check whether the server is reachable. The script will output the status of each server, indicating whether it is "up and running" or "unreachable."
 
 #Features
