@@ -41,6 +41,12 @@ fi
 
 ![image](https://github.com/user-attachments/assets/789ee139-58ab-459a-b331-a7dbb1852ca7)
 
+# Example of MYSQL:
+
+
+![image](https://github.com/user-attachments/assets/d5d23c8b-7678-4c39-a909-fc4d59bc6981)
+
+
 
 
 bash
