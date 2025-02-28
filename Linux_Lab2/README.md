@@ -46,6 +46,11 @@ fi
 
 ![image](https://github.com/user-attachments/assets/d5d23c8b-7678-4c39-a909-fc4d59bc6981)
 
+# MYSQL updated to be:
+
+![image](https://github.com/user-attachments/assets/5661d886-9ab3-418d-ae67-3d1da3d9baaf)
+
+
 
 
 
