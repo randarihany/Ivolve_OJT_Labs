@@ -2,8 +2,10 @@
 Objective: Generate public and private keys and enable SSH from your machine to another VM using the key. 
 Configure SSH to just run 'ssh ivolve' without specify username, IP and key in the command
 
-instance 1   172.31.81.68
-instance 2   172.31.90.251
+
+# instance 1   3.89.142.100
+# instance 2   18.206.88.168
+
 
 
 Step 1: Generate SSH Keys
@@ -33,14 +35,38 @@ You can do this using the ssh-copy-id command. For example:
 ```
 ssh-copy-id -i ~/.ssh/id_rsa.pub username@remote_ip
 ```
+
+Error:
+
+![image](https://github.com/user-attachments/assets/407387a5-6b1a-4cbd-9b5b-2badae1f5034)
+
+/etc/ssh/sshd_config
+![image](https://github.com/user-attachments/assets/87227186-321f-45d0-a85c-ebd3d2d2efb4)
+![image](https://github.com/user-attachments/assets/41f3d250-dab5-4dc7-a8ff-6fa321192620)
+
+Updated configyrations:
+![image](https://github.com/user-attachments/assets/0d57d8d8-47a9-4391-9b97-05e173dcf746)
+
+![image](https://github.com/user-attachments/assets/d2b8853e-aad7-401c-a556-32fe87c80bbd)
+
 Explanation:
 
 -i ~/.ssh/id_rsa.pub specifies the public key file to copy.
 username@remote_ip should be replaced with the actual username and IP address of your remote VM.
 After running the above command, you’ll be asked to enter the password of the remote machine for the username.
+# copy manually  --not recommended
+in instance 2:
+```
+nano .ssh/authorized_keys   -- copy public key in id_rsa.pub
+```
 
 Step 3: Test SSH Login
 Now that you’ve copied the public key to the remote VM, you can test if the SSH login works without a password prompt:
+
+From instance 1 i was able to ssh on instance 2
+
+![image](https://github.com/user-attachments/assets/36359597-46c8-4748-9251-9f4abcdbab77)
+
 
 ```
 ssh username@remote_ip
@@ -64,6 +90,9 @@ Host ivolve
     IdentityFile ~/.ssh/id_rsa
 ```
 
+![image](https://github.com/user-attachments/assets/ea1a72f5-354f-4d46-a4e7-e6a05660b640)
+
+
 Explanation:
 Host ivolve: This is the alias you'll use for the SSH connection (i.e., ssh ivolve).
 HostName remote_ip: Replace remote_ip with the actual IP address or hostname of the remote VM.
@@ -78,3 +107,6 @@ Now, you should be able to connect to the remote VM by simply typing:
 ssh ivolve
 ```
 This will use the configuration in the ~/.ssh/config file to connect without needing to specify the username, IP, or key explicitly.
+
+![image](https://github.com/user-attachments/assets/fae9f70c-dba8-4c77-8ee2-6ac8ac181fd9)
+
