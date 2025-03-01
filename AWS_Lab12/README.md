@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ed3670c3-abed-492f-9f5a-524777e53aef)# Lab 12: Launching an EC2 Instance with a Bastion Host
+# Lab 12: Launching an EC2 Instance with a Bastion Host
 
 - Objective
 In this lab, you'll learn how to:
