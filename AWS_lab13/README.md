@@ -1,5 +1,8 @@
-# Lab 13: Create AWS Load Balancer
+ # Lab 13: Create AWS Load Balancer
 • Objective: create VPC with 2 subnets, launch 2 EC2s with nginx and apache installed, and create and configure a Load Balancer to access the 2 Web servers.
+
+![image](https://github.com/user-attachments/assets/f8ac0a8b-5f30-499d-a3ef-6c3f89f6b9a9)
+
 
 Step 1: Set up the VPC
 Log in to the AWS Console:
