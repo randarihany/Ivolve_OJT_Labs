@@ -80,7 +80,7 @@ Create a new target group and choose Instance as the target type.
 Set the protocol to HTTP and port to 80.
 Keep the default health check settings for HTTP.
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/0fc0c8aa-88e7-47c9-8dde-bf47fb94cc94)
 
 
 Step 5: Register EC2 Instances with the Load Balancer
