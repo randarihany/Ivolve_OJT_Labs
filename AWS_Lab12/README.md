@@ -155,19 +155,12 @@ Output:
 bash
 Copy
 ssh -i /path/to/your/public-key.pem ec2-user@<Public-EC2-Public-IP>
-From the public EC2 instance (the bastion host), SSH into the private EC2 instance using its private IP:
+- From the public EC2 instance (the bastion host), SSH into the private EC2 instance using its private IP:
 
 ![image](https://github.com/user-attachments/assets/d1004986-090b-4169-a79f-289282863db8)
 
-From Bastion Host:
+- From Bastion Host:
+Copy private key first
 ![image](https://github.com/user-attachments/assets/98da269c-11f8-46fd-aaeb-5415a358a57d)
 
-bash
-Copy
-ssh -i /path/to/your/private-key.pem ec2-user@<Private-EC2-Private-IP>
-Step 7: Verify Connectivity
-Ensure that you can connect to the private EC2 instance only through the public EC2 instance.
-You should not be able to SSH into the private EC2 instance directly from your local machine.
-Security Group Configuration Summary
-Public Security Group allows SSH from anywhere (0.0.0.0/0).
-Private Security Group allows SSH only from the public EC2 instance's security group.
+
