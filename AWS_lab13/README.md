@@ -72,19 +72,21 @@ Configure the Listeners:
 Add a listener on HTTP (port 80).
 ![image](https://github.com/user-attachments/assets/cb09e015-7597-43fb-8448-b4198cada24b)
 
-Configure the Security Groups:
+- Configure the Security Groups:
 Use the LoadBalancer-SG security group created earlier.
-Configure Target Group:
+
+- Configure Target Group:
 Create a new target group and choose Instance as the target type.
 Set the protocol to HTTP and port to 80.
 Keep the default health check settings for HTTP.
 
-![image](https://github.com/user-attachments/assets/82f6abdf-ad05-44ce-bd4a-e365cb4db1c2)
+![Uploading image.png…]()
+
 
 Step 5: Register EC2 Instances with the Load Balancer
 After configuring the target group, add your two EC2 instances (the ones running nginx and apache).
 Verify the health status of the instances. The Load Balancer should route traffic to them once they pass the health check.
-
+![image](https://github.com/user-attachments/assets/82f6abdf-ad05-44ce-bd4a-e365cb4db1c2)
 Step 6: Modify Security Groups of EC2 Instances
 Modify the Security Groups of the EC2 instances (Web Servers) to accept traffic only from the Load Balancer.
 Go to Security Groups and edit the security group associated with your EC2 instances.
@@ -94,10 +96,11 @@ Create an inbound rule allowing HTTP (port 80) traffic only from the Load Balanc
 Step 7: Test the Setup
 Go to the Load Balancer’s DNS name (you’ll find it in the Load Balancer dashboard).
 Open the DNS name in a browser. The load balancer should route requests to the two EC2 instances.
-The instance running nginx should serve an Nginx page.
-The instance running Apache should serve an Apache page.
+- The instance running nginx should serve an Nginx page.
 
 ![image](https://github.com/user-attachments/assets/0be636d3-bc46-4329-b44a-0fbf9543468f)
+
+- The instance running Apache should serve an Apache page.
 
 ![image](https://github.com/user-attachments/assets/0b8c3cc2-2249-4daa-9f7e-0f7cc64bd633)
 
