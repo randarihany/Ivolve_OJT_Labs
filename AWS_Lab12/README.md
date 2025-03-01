@@ -1,4 +1,4 @@
-# Lab 12: Launching an EC2 Instance with a Bastion Host
+![image](https://github.com/user-attachments/assets/ed3670c3-abed-492f-9f5a-524777e53aef)# Lab 12: Launching an EC2 Instance with a Bastion Host
 
 - Objective
 In this lab, you'll learn how to:
@@ -160,9 +160,7 @@ From the public EC2 instance (the bastion host), SSH into the private EC2 instan
 ![image](https://github.com/user-attachments/assets/d1004986-090b-4169-a79f-289282863db8)
 
 From Bastion Host:
-![image](https://github.com/user-attachments/assets/a9d51a6b-7f3f-4095-a546-fd937109eb01)
-
-
+![image](https://github.com/user-attachments/assets/98da269c-11f8-46fd-aaeb-5415a358a57d)
 
 bash
 Copy
