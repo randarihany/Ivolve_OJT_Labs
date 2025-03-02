@@ -41,12 +41,17 @@ check playbook syntax
 ansible-navigator run -m stdout /ansible/webserver_installation.yml --syntax-check
 ```
 Before running:
-Apache not installed:
+- Apache not installed:
 ![image](https://github.com/user-attachments/assets/8a5d98dd-ebfc-4d75-bdca-aaad4d08e662)
 
 Run playbook
 ```
 ansible-navigator run -m stdout /ansible/webserver_installation.yml
 ```
+![image](https://github.com/user-attachments/assets/c25f9da5-0ba6-47c9-a306-dfc1b9fe4d6f)
+
+Use the curl command to verify that serverc.lab.example.com is configured as an HTTPD server.
+
+![image](https://github.com/user-attachments/assets/9a7bec68-fb10-4da6-816f-ff6b17333caf)
 
 
