@@ -1,0 +1,30 @@
+---
+- name: Install MySQL and Setup ivolve DB
+  hosts: 44.204.43.208 
+  become: yes
+  vars_files:
+    - vars/vault.yml
+
+  tasks:
+    - name: Install MySQL
+      package:
+        name: mysql-server
+        state: present
+
+    - name: Ensure MySQL service is running
+      service:
+        name: mysql
+        state: started
+        enabled: yes
+
+    - name: Create ivolve database
+      mysql_db:
+        name: ivolve
+        state: present
+
+    - name: Create MySQL user for ivolve database
+      mysql_user:
+        name: ivolve_user
+        password: "{{ mysql_password }}"
+        priv: "ivolve.*:ALL"
+        state: present
