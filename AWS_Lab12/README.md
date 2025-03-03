@@ -16,7 +16,7 @@
 ## Steps to Complete the Lab
 
 ### Step 1: Create a VPC
-**1** Configure VPC with the following settings:
+- Configure VPC with the following settings:
    - **VPC Name**: `Main_VPC`
    - **IPv4 CIDR block**: `10.0.0.0/16`
    - **IPv6 CIDR block**: No IPv6
