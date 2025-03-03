@@ -129,9 +129,10 @@ aws s3api get-bucket-logging --bucket ivolve-lab18
 ```
 
 ![image](https://github.com/user-attachments/assets/90ed50d1-271a-4c11-8636-cb2e6fbd8a05)
+
 ---
 
-8**AWS Console:**
+**AWS Console:**
 
 ![image](https://github.com/user-attachments/assets/77304cf0-a7cb-4c5b-a98e-a8e4dc3ddca8)
 
