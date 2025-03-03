@@ -1,5 +1,27 @@
 # Lab 14: SDK and CLI Interactions
-• Objective: Use the AWS CLI to Create an S3 bucket, configure permissions, and upload/download files to/from the bucket. Enable versioning and logging for the bucket.
+
+## Objective
+Use the AWS CLI to:
+- Create an S3 bucket.
+- Configure permissions.
+- Upload and download files to/from the bucket.
+- Enable versioning and logging for the bucket.
+
+---
+
+## Steps to Complete the Lab
+
+### 1. Create an S3 Bucket
+Create an S3 bucket using the AWS CLI. The bucket name must be globally unique.
+
+**Command:**
+```
+aws s3 mb s3://your-unique-bucket-name
+```
+
+# Lab 14: SDK and CLI Interactions
+**Objective:**  
+Use the AWS CLI to Create an S3 bucket, configure permissions, and upload/download files to/from the bucket. Enable versioning and logging for the bucket.
 
 
 For Lab 14: SDK and CLI Interactions, you'll be using the AWS CLI to interact with Amazon S3 for several tasks. Below are the detailed steps to create an S3 bucket, configure permissions, upload/download files, and enable versioning and logging.
