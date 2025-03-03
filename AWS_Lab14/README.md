@@ -12,15 +12,19 @@ Command:
 aws s3 mb s3://your-unique-bucket-name
 ```
 Output:
+
 ![image](https://github.com/user-attachments/assets/20fbb0dd-7a07-4aa7-8877-6e4e81e4759c)
 
 2. Configure Bucket Permissions
 Next, you'll set permissions for your S3 bucket. You can either apply an ACL (Access Control List) or use a bucket policy to manage access.
 
 Example of Granting Public Read Access:
-To allow public read access, use this bucket policy:
+
 currently no bucket policy:
+
 ![image](https://github.com/user-attachments/assets/5fdbb168-d31b-496f-a66e-22e50ea6af3d)
+
+To allow public read access, use this bucket policy:
 
 ```
 aws s3api put-bucket-policy --bucket your-unique-bucket-name --policy file://policy.json
@@ -28,7 +32,7 @@ aws s3api put-bucket-policy --bucket your-unique-bucket-name --policy file://pol
 policy.json (Example to allow public read access):
 
 json
-``
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -105,6 +109,7 @@ aws s3api get-bucket-versioning --bucket ivolve-lab18
 ![image](https://github.com/user-attachments/assets/ba657ee9-5418-4fa1-9b15-d05ac0ffd0c7)
 
 - Check Logging Status:
+
 ```
 aws s3api get-bucket-logging --bucket ivolve-lab18
 ```
