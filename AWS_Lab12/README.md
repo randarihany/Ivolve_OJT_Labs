@@ -1,5 +1,6 @@
 # Lab 12: Launching an EC2 Instance with a Bastion Host
 
+## Architecture:
 ![Lab Overview](https://github.com/user-attachments/assets/71793f42-fbab-46e5-a0c6-aaa438a3acb8)
 
 ---
