@@ -71,7 +71,7 @@ create logging bucket:
 ```
 aws s3 mb s3://ivolve-logs-bucket 
 ```
-**Command**
+**Command:**
 ```
 aws s3api put-bucket-logging --bucket ivolve-lab18 --bucket-logging-status '{
   "LoggingEnabled": {
@@ -94,7 +94,7 @@ aws s3api get-bucket-logging --bucket ivolve-lab18
 ### 5. Upload a File to the S3 Bucket
 For example, upload a file called file1.txt from local machine.
 
-**comand:**
+**Comand:**
 ```
 aws s3 cp file.txt s3://ivolve-lab18/
 ```
@@ -103,7 +103,7 @@ aws s3 cp file.txt s3://ivolve-lab18/
 ### 6. Download a File from the S3 Bucket
 For example, download a file called file2.txt to local machine to current working directory.
 
-**comand:**
+**Comand:**
 ```
 aws s3 cp s3://ivolve-lab18/file2.txt . 
 ```
@@ -113,7 +113,7 @@ aws s3 cp s3://ivolve-lab18/file2.txt .
 ### 7. Check the Versioning Status
 check and confirm that versioning is enabled.
 
-**comand:**
+**Comand:**
 ```
 aws s3api get-bucket-versioning --bucket ivolve-lab18
 ```
@@ -123,7 +123,7 @@ aws s3api get-bucket-versioning --bucket ivolve-lab18
 ### 8. Check the logging Status
 check and confirm that logging is enabled.
 
-**comand:**
+**Comand:**
 ```
 aws s3api get-bucket-logging --bucket ivolve-lab18
 ```
