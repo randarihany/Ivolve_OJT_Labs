@@ -6,7 +6,6 @@
 ---
 
 ## Objective
-In this lab, you'll learn how to:
 - Create a Virtual Private Cloud (VPC) with both public and private subnets.
 - Launch an EC2 instance in each subnet (one in the public subnet and one in the private subnet).
 - Configure security groups to allow only inbound SSH traffic from the public EC2 instance to the private EC2 instance.
@@ -14,24 +13,15 @@ In this lab, you'll learn how to:
 
 ---
 
-## Prerequisites
-Before proceeding, make sure you have:
-- An AWS account with sufficient permissions.
-- Basic knowledge of AWS VPC, EC2, and SSH.
-
----
-
 ## Steps to Complete the Lab
 
 ### Step 1: Create a VPC
-1. Open the **VPC Dashboard** in the AWS Management Console.
-2. Click **Create VPC**.
-3. Configure the following settings:
+**1** Configure VPC with the following settings:
    - **VPC Name**: `Main_VPC`
    - **IPv4 CIDR block**: `10.0.0.0/16`
    - **IPv6 CIDR block**: No IPv6
    - **Tenancy**: Default
-4. Click **Create VPC**.
+
 
 **Output:**
 ![VPC Created](https://github.com/user-attachments/assets/aa113018-aa41-4362-a1a8-3d347e04ada0)
