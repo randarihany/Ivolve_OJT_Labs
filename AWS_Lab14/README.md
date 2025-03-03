@@ -18,26 +18,11 @@ Create an S3 bucket using the AWS CLI. The bucket name must be globally unique.
 ```
 aws s3 mb s3://your-unique-bucket-name
 ```
-
-# Lab 14: SDK and CLI Interactions
-**Objective:**  
-Use the AWS CLI to Create an S3 bucket, configure permissions, and upload/download files to/from the bucket. Enable versioning and logging for the bucket.
-
-
-For Lab 14: SDK and CLI Interactions, you'll be using the AWS CLI to interact with Amazon S3 for several tasks. Below are the detailed steps to create an S3 bucket, configure permissions, upload/download files, and enable versioning and logging.
-
-1. Create an S3 Bucket
-The first task is to create an S3 bucket using the AWS CLI. The bucket name must be globally unique.
-
-Command:
-```
-aws s3 mb s3://your-unique-bucket-name
-```
 Output:
 
 ![image](https://github.com/user-attachments/assets/20fbb0dd-7a07-4aa7-8877-6e4e81e4759c)
 
-2. Configure Bucket Permissions
+### 2. Configure Bucket Permissions
 Next, you'll set permissions for your S3 bucket. You can either apply an ACL (Access Control List) or use a bucket policy to manage access.
 
 Example of Granting Public Read Access:
@@ -73,7 +58,7 @@ Can pass policy  inline:
 
 ![image](https://github.com/user-attachments/assets/e9bc7f07-1075-49dc-b16d-5ee88dc4a251)
 
-3. Enable Versioning
+### 3. Enable Versioning
 You can enable versioning on your S3 bucket, which will allow S3 to keep multiple versions of an object.
 
 Command:
@@ -81,7 +66,7 @@ Command:
 aws s3api put-bucket-versioning --bucket ivolve-lab18 --versioning-configuration Status=Enabled 
 ```
 
-4. Enable Logging
+### 4. Enable Logging
 To enable logging on your S3 bucket, you need to configure a target bucket to store the logs. Let's assume you have another bucket called logs-bucket.
 creat logging bucket:
 ```
@@ -105,7 +90,7 @@ aws s3api get-bucket-logging --bucket ivolve-lab18
 
 ![image](https://github.com/user-attachments/assets/7912dd05-99a1-463e-aa6a-a165b023c6a6)
 
-5. Upload a File to the S3 Bucket
+### 5. Upload a File to the S3 Bucket
 Use the AWS CLI to upload files to your S3 bucket. For example, if you want to upload a file called file.txt from your local machine:
 ```
 aws s3 cp file.txt s3://ivolve-lab18/
@@ -120,7 +105,7 @@ aws s3 cp s3://ivolve-lab18/file2.txt .
 
 ![image](https://github.com/user-attachments/assets/68ec99e2-8df7-45fe-b78e-4390a0b33751)
 
-7. Check the Versioning and Logging Status
+### 6. Check the Versioning and Logging Status
 To confirm that versioning is enabled and logging is working:
 
 - Check Versioning Status:
