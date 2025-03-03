@@ -24,9 +24,6 @@ aws s3 mb s3://your-unique-bucket-name
 ![image](https://github.com/user-attachments/assets/20fbb0dd-7a07-4aa7-8877-6e4e81e4759c)
 
 ### 2. Configure Bucket Permissions
-Set permissions for S3 bucket. 
-Can either apply an ACL (Access Control List) or use a bucket policy to manage access.
-
 Example of Granting Public Read Access:
 
 **currently no bucket policy:**
@@ -39,7 +36,7 @@ To allow public read access, use this bucket policy:
 aws s3api put-bucket-policy --bucket ivolve-lab18 --policy file://s3_policy.json
 ```
 
-s3_policy.json
+s3_policy.json:
 ```
 {
   "Version": "2012-10-17",
@@ -54,8 +51,7 @@ s3_policy.json
 }
 
 ```
-
-OR Can pass policy  inline:
+Can either pass policy  inline:
 
 ![image](https://github.com/user-attachments/assets/e9bc7f07-1075-49dc-b16d-5ee88dc4a251)
 
@@ -68,7 +64,8 @@ aws s3api put-bucket-versioning --bucket ivolve-lab18 --versioning-configuration
 ```
 
 ### 4. Enable Logging
-Enable logging on S3 bucket,will need to configure a target bucket to store the logs. Accordingly will create bucket called ivolve-logs-bucket.
+Enable logging on S3 bucket,will need to configure a target bucket to store the logs.
+Accordingly will create bucket called ivolve-logs-bucket.
 
 create logging bucket:
 ```
@@ -84,9 +81,10 @@ aws s3api put-bucket-logging --bucket ivolve-lab18 --bucket-logging-status '{
 }'
 ```
 TargetBucket: The bucket where logs will be stored.
+
 TargetPrefix: A prefix for the log file (optional).
 
-- Verify Logging Configuration
+Verify logging configuration
 ```
 aws s3api get-bucket-logging --bucket ivolve-lab18
 ```
@@ -122,7 +120,7 @@ aws s3api get-bucket-versioning --bucket ivolve-lab18
 
 ![image](https://github.com/user-attachments/assets/ba657ee9-5418-4fa1-9b15-d05ac0ffd0c7)
 
-### 8. Check theLogging Status
+### 8. Check the logging Status
 check and confirm that logging is enabled.
 
 **comand:**
@@ -131,7 +129,6 @@ aws s3api get-bucket-logging --bucket ivolve-lab18
 ```
 
 ![image](https://github.com/user-attachments/assets/90ed50d1-271a-4c11-8636-cb2e6fbd8a05)
-
 ---
 
 8**AWS Console:**
