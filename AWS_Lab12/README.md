@@ -23,7 +23,7 @@
    - **Tenancy**: Default
 
 
-**Output:**
+**AWS Console:**
 ![VPC Created](https://github.com/user-attachments/assets/aa113018-aa41-4362-a1a8-3d347e04ada0)
 
 ---
@@ -31,27 +31,23 @@
 ### Step 2: Create Subnets
 Create one public subnet and one private subnet within the VPC.
 
-#### Public Subnet
-1. In the VPC dashboard, go to **Subnets** and click **Create subnet**.
-2. Configure the following settings:
+#### Public Subnet:
+- Configure subnet with the following settings:
    - **VPC**: Select your newly created VPC.
    - **Subnet Name**: `PublicSubnet`
    - **Availability Zone**: Choose any available AZ.
    - **IPv4 CIDR block**: `10.0.1.0/24`
    - **Auto-assign Public IP**: Enable.
-3. Click **Create subnet**.
 
-**Output:**
+**AWS Console:**
 ![Public Subnet](https://github.com/user-attachments/assets/5467792a-5910-4c13-8e15-b764851d0792)
 
-#### Private Subnet
-1. Click **Create subnet** again.
-2. Configure the following settings:
+#### Private Subnet:
+- Configure the following settings:
    - **VPC**: Select your VPC.
    - **Subnet Name**: `PrivateSubnet`
    - **Availability Zone**: Choose any available AZ.
    - **IPv4 CIDR block**: `10.0.2.0/24`
-3. Click **Create subnet**.
 
 **Output:**
 ![Private Subnet](https://github.com/user-attachments/assets/7092380f-2a34-41ef-bc8c-977186b7bccf)
@@ -62,19 +58,13 @@ Create one public subnet and one private subnet within the VPC.
 ---
 
 ### Step 3: Set Up an Internet Gateway
-1. Go to **Internet Gateways** in the VPC dashboard.
-2. Click **Create internet gateway**.
-3. Name it `MyInternetGateway`.
-4. Click **Create**.
+- Go to **Internet Gateways** in the VPC dashboard.
+- Name  `MyInternetGateway`.
+- Attach the internet gateway to  VPC
 
-**Output:**
+**AWS Console:**
 ![Internet Gateway](https://github.com/user-attachments/assets/a65c720b-1da7-4fbd-8aca-2ae44bf39803)
 
-5. Attach the internet gateway to your VPC:
-   - Select the gateway and click **Actions → Attach to VPC**.
-   - Select your VPC and click **Attach**.
-
-**Output:**
 ![Attach Internet Gateway](https://github.com/user-attachments/assets/96946800-e8bd-4bc6-adf1-43fd89dd9f74)
 
 ---
@@ -82,60 +72,60 @@ Create one public subnet and one private subnet within the VPC.
 ### Step 4: Route Tables Configuration
 
 #### Public Subnet Route Table
-1. Go to **Route Tables** in the VPC dashboard.
-2. Select the **Main Route Table** and click **Edit routes**.
-3. Add a route to allow outbound internet traffic:
+- **Main Route Table** and click **Edit routes**.
+- Add a route to allow outbound internet traffic:
    - **Destination**: `0.0.0.0/0`
    - **Target**: Select your Internet Gateway.
-4. Click **Save routes**.
 
-**Output:**
+**AWS Console:**
 ![Public Route Table](https://github.com/user-attachments/assets/56ff9a8c-0050-43fe-a6d5-ed9ffb1b38b5)
 
-5. Associate the route table with the **PublicSubnet**:
-   ![Associate Subnet](https://github.com/user-attachments/assets/0edf40ed-dc4a-44aa-a471-fe50596d5dce)
+- Associate the route table with the **PublicSubnet**:
+
+**AWS Console:**
+![Associate Subnet](https://github.com/user-attachments/assets/0edf40ed-dc4a-44aa-a471-fe50596d5dce)
 
 #### Private Subnet Route Table
-1. Create a new route table for the private subnet:
-   - Go to **Route Tables** and click **Create route table**.
-   - Name it `PrivateRouteTable`.
-   - Choose the same VPC.
-   - Click **Create**.
+- Create a new route table for the private subnet:
+   - **Route Tables** and click **Create route table**.
+   - Name  `PrivateRouteTable`.
 
-**Output:**
+**AWS Console:**
 ![Private Route Table](https://github.com/user-attachments/assets/e630cdb3-c0cd-444a-a144-6222662d5c1a)
 
-2. Associate the private route table with the **PrivateSubnet**:
-   ![Associate Private Subnet](https://github.com/user-attachments/assets/84ec96cf-4289-49aa-9a2c-a3d1452d744d)
+- Associate the route table with the **PrivateSubnet**:
+**AWS Console:**
+ ![Associate Private Subnet](https://github.com/user-attachments/assets/84ec96cf-4289-49aa-9a2c-a3d1452d744d)
 
 ---
 
 ### Step 5: Launch EC2 Instances
 
 #### Launch Public EC2 Instance (Bastion Host)
-1. Go to the **EC2 Dashboard** and click **Launch Instance**.
-2. Choose an **Amazon Linux AMI**.
-3. Select an instance type (e.g., `t2.micro`).
-4. Configure the instance to be in the **PublicSubnet**.
+- **Launch Instance**.
+- **Amazon Linux AMI**.
+- instance type (e.g., `t2.micro`).
+- Configure the instance to be in the **PublicSubnet**.
    ![Public Instance Configuration](https://github.com/user-attachments/assets/a3076042-072c-4d86-81f2-9c147a1f3259)
-5. In the **Configure Security Group**, create a new security group (`PublicSecurityGroup`) with the following rules:
+- In the **Configure Security Group**, create a new security group (`PublicSecurityGroup`) with the following rules:
    - **Type**: SSH
    - **Source**: `0.0.0.0/0` (or your IP for limited access).
-6. Launch the instance and download the private key (`.pem` file).
+- Launch the instance and download the private key (`.pem` file).
 
-**Output:**
+**AWS Console:**
 ![Public Instance Launched](https://github.com/user-attachments/assets/0a7c4be6-d91c-47ff-b2eb-5313dd267eef)
 
 #### Launch Private EC2 Instance
-1. Launch a second EC2 instance in the **PrivateSubnet** with the same AMI and instance type as the public instance.
-2. In the **Configure Security Group**, create a new security group (`PrivateSecurityGroup`) with the following rules:
+- Launch a second EC2 instance in the **PrivateSubnet** with the same AMI and instance type as the public instance.
+- In the **Configure Security Group**, create a new security group (`PrivateSecurityGroup`) with the following rules:
    - **Type**: SSH
    - **Source**: Custom IP (select the public EC2 instance's security group).
-3. Launch the instance and download its private key.
+- Launch the instance and download its private key.
 
 ---
 
 ### Step 6: Set Up SSH Access via the Bastion Host
-1. From your local machine, SSH into the public EC2 instance using its public IP and the downloaded `.pem` key:
-   ```bash
-   ssh -i /path/to/your/public-key.pem ec2-user@<Public-EC2-Public-IP>
+1. From local machine, SSH into the public EC2 instance using its public IP and the downloaded `.pem` key:
+```
+ssh -i /path/to/your/public-key.pem ec2-user@<Public-EC2-Public-IP>
+```
