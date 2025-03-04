@@ -60,19 +60,9 @@ terraform init
 terraform apply
 ```
 
-### Step 5: Verify the EC2 IP in the File
-
-After Terraform has successfully applied the configuration, it will execute the local-exec provisioner and write the EC2 instance's public IP to a file called ec2-ip.txt in your local directory.
-
-You can open the ec2-ip.txt file to verify the IP address of the EC2 instance.
-
-![image](https://github.com/user-attachments/assets/05140150-2088-44c5-91b7-b014fa867dbe)
-
-![image](https://github.com/user-attachments/assets/84761971-de79-4b08-8a45-daaa15dab9ed)
-
 - **Resources Created:**
 
--  Subnets
+- **Subnets:**
 
 ![image](https://github.com/user-attachments/assets/b25d7f74-3f57-4f6c-9555-8c5e1519cbb7)
 
@@ -87,6 +77,18 @@ You can open the ec2-ip.txt file to verify the IP address of the EC2 instance.
 - **EC2 Instance:**
 
 ![image](https://github.com/user-attachments/assets/a92bd3a1-e82b-46ed-9cb1-869ae66d6fa5)
+
+
+### Step 5: Verify the EC2 IP in the File
+
+After Terraform has successfully applied the configuration, it will execute the local-exec provisioner and write the EC2 instance's public IP to a file called ec2-ip.txt in your local directory.
+
+You can open the ec2-ip.txt file to verify the IP address of the EC2 instance.
+
+![image](https://github.com/user-attachments/assets/05140150-2088-44c5-91b7-b014fa867dbe)
+
+![image](https://github.com/user-attachments/assets/84761971-de79-4b08-8a45-daaa15dab9ed)
+
 
 
 
