@@ -51,7 +51,7 @@ Create one public subnet and one private subnet within the VPC.
    - **Availability Zone**: Choose any available AZ.
    - **IPv4 CIDR block**: `10.0.2.0/24`
 
-**Output:**
+**AWS Console:**
 
 ![Private Subnet](https://github.com/user-attachments/assets/7092380f-2a34-41ef-bc8c-977186b7bccf)
 
