@@ -131,5 +131,9 @@
 **Output:**
 - **Nginx Page**:
   ![Nginx Page](https://github.com/user-attachments/assets/0be636d3-bc46-4329-b44a-0fbf9543468f)
+
+- The instance running Apache should serve an Apache page.
+
+![image](https://github.com/user-attachments/assets/0b8c3cc2-2249-4daa-9f7e-0f7cc64bd633)
 - **Apache Page**:
   ![Apache Page](https://github.com/user-attachments/assets/0b8c3cc2-2249-4daa-9f7e-0f7cc64bd633)
