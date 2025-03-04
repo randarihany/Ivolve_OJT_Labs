@@ -15,32 +15,30 @@
 
 ## Steps to Complete the Lab
 
-### Step 1: Create a VPC Manually
+### Step 1: Create a VPC Manually:
 - **VPC only** option (without additional resources).
 - Configure the VPC with the following settings:
    - **IPv4 CIDR Block**: `10.0.0.0/16`
    - **Tenancy**: Default
 
-**VPC Configurations:**
+- **VPC Configurations:**
 ![VPC Configuration](https://github.com/user-attachments/assets/16666fde-6ca0-4007-b0fd-4e7f7ad3c9bb)
-
-**VPC Outputs:**
-![VPC Output](https://github.com/user-attachments/assets/b3f79f71-0f61-40e7-97b2-65ee34d875dc)
 
 ---
 
-### Step 2: Import the VPC into Terraform
+### Step 2: Import the VPC into Terraform:
+
 1. Initialize Terraform:
 ```
 terraform init
 ```
-2.Import the manually created VPC into Terraform:
+2. Import the manually created VPC into Terraform:
 
 ```
 terraform import aws_vpc.main vpc-0c2d15a417e3da752
 ```
 
-**Import Result:**
+- **Import Result:**
 
 ![image](https://github.com/user-attachments/assets/3c0b9051-2726-459f-9a29-c240c9d553eb)
 
@@ -72,20 +70,22 @@ You can open the ec2-ip.txt file to verify the IP address of the EC2 instance.
 
 ![image](https://github.com/user-attachments/assets/84761971-de79-4b08-8a45-daaa15dab9ed)
 
+- **Resources Created:**
 
-Terraform Ec2:
-![image](https://github.com/user-attachments/assets/dbf1bcf4-7c9f-4435-b323-8e8b761ebabc)
-- 
+-  Subnets
 
 ![image](https://github.com/user-attachments/assets/b25d7f74-3f57-4f6c-9555-8c5e1519cbb7)
--
+
+- **Route table:**
 
 ![image](https://github.com/user-attachments/assets/aba39251-44f3-42a2-b7cc-8777d271bcc7)
--
+
+- **Internet Gateway:**
+  
 ![image](https://github.com/user-attachments/assets/b59f8794-414a-4bc5-a9b1-a44d86e479bc)
 
-- EC2 Instance
-- 
+- **EC2 Instance:**
+
 ![image](https://github.com/user-attachments/assets/a92bd3a1-e82b-46ed-9cb1-869ae66d6fa5)
 
 
