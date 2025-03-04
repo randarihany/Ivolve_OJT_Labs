@@ -129,3 +129,13 @@ Create one public subnet and one private subnet within the VPC.
 ```
 ssh -i /path/to/your/public-key.pem ec2-user@<Public-EC2-Public-IP>
 ```
+![image](https://github.com/user-attachments/assets/910bd597-0a70-4432-8776-e96aae5ff9b9)
+
+- From the public EC2 instance (the bastion host), SSH into the private EC2 instance using its private IP:
+
+![image](https://github.com/user-attachments/assets/d1004986-090b-4169-a79f-289282863db8)
+
+- From Bastion Host:
+Copy private key first
+
+![image](https://github.com/user-attachments/assets/98da269c-11f8-46fd-aaeb-5415a358a57d)
