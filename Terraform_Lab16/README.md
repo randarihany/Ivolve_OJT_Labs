@@ -45,7 +45,7 @@ terraform import aws_vpc.main vpc-0c2d15a417e3da752
 ![image](https://github.com/user-attachments/assets/3c0b9051-2726-459f-9a29-c240c9d553eb)
 
 ### Step 3: Set Up Terraform Configuration:
-- [Go to] Terraform_Lab16/code
+- [Go to]Terraform_Lab16/code
 
 - That includes:
   - Provider: Specifies the AWS region where resources will be created.
@@ -71,4 +71,24 @@ You can open the ec2-ip.txt file to verify the IP address of the EC2 instance.
 ![image](https://github.com/user-attachments/assets/05140150-2088-44c5-91b7-b014fa867dbe)
 
 ![image](https://github.com/user-attachments/assets/84761971-de79-4b08-8a45-daaa15dab9ed)
+
+
+Terraform Ec2:
+![image](https://github.com/user-attachments/assets/dbf1bcf4-7c9f-4435-b323-8e8b761ebabc)
+- 
+
+![image](https://github.com/user-attachments/assets/b25d7f74-3f57-4f6c-9555-8c5e1519cbb7)
+-
+
+![image](https://github.com/user-attachments/assets/aba39251-44f3-42a2-b7cc-8777d271bcc7)
+-
+![image](https://github.com/user-attachments/assets/b59f8794-414a-4bc5-a9b1-a44d86e479bc)
+
+- EC2 Instance
+- 
+![image](https://github.com/user-attachments/assets/a92bd3a1-e82b-46ed-9cb1-869ae66d6fa5)
+
+
+
+
 
