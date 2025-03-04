@@ -121,15 +121,15 @@ Create one public subnet and one private subnet within the VPC.
    - **Type**: SSH
    - **Source**: Custom IP (select the public EC2 instance's security group).
 - Launch the instance and download its private key.
-
+![image](https://github.com/user-attachments/assets/910bd597-0a70-4432-8776-e96aae5ff9b9)
 ---
 
 ### Step 6: Set Up SSH Access via the Bastion Host
-1. From local machine, SSH into the public EC2 instance using its public IP and the downloaded `.pem` key:
+- From local machine, SSH into the public EC2 instance using its public IP and the downloaded `.pem` key:
 ```
 ssh -i /path/to/your/public-key.pem ec2-user@<Public-EC2-Public-IP>
 ```
-![image](https://github.com/user-attachments/assets/910bd597-0a70-4432-8776-e96aae5ff9b9)
+
 
 - From the public EC2 instance (the bastion host), SSH into the private EC2 instance using its private IP:
 
