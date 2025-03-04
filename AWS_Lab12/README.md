@@ -24,6 +24,7 @@
 
 
 **AWS Console:**
+
 ![VPC Created](https://github.com/user-attachments/assets/aa113018-aa41-4362-a1a8-3d347e04ada0)
 
 ---
@@ -40,6 +41,7 @@ Create one public subnet and one private subnet within the VPC.
    - **Auto-assign Public IP**: Enable.
 
 **AWS Console:**
+
 ![Public Subnet](https://github.com/user-attachments/assets/5467792a-5910-4c13-8e15-b764851d0792)
 
 #### Private Subnet:
@@ -50,9 +52,11 @@ Create one public subnet and one private subnet within the VPC.
    - **IPv4 CIDR block**: `10.0.2.0/24`
 
 **Output:**
+
 ![Private Subnet](https://github.com/user-attachments/assets/7092380f-2a34-41ef-bc8c-977186b7bccf)
 
 **Subnet Output:**
+
 ![Subnets Overview](https://github.com/user-attachments/assets/57718f58-d58c-451c-9fdf-181401317995)
 
 ---
@@ -63,6 +67,7 @@ Create one public subnet and one private subnet within the VPC.
 - Attach the internet gateway to  VPC
 
 **AWS Console:**
+
 ![Internet Gateway](https://github.com/user-attachments/assets/a65c720b-1da7-4fbd-8aca-2ae44bf39803)
 
 ![Attach Internet Gateway](https://github.com/user-attachments/assets/96946800-e8bd-4bc6-adf1-43fd89dd9f74)
@@ -78,11 +83,13 @@ Create one public subnet and one private subnet within the VPC.
    - **Target**: Select your Internet Gateway.
 
 **AWS Console:**
+
 ![Public Route Table](https://github.com/user-attachments/assets/56ff9a8c-0050-43fe-a6d5-ed9ffb1b38b5)
 
 - Associate the route table with the **PublicSubnet**:
 
 **AWS Console:**
+
 ![Associate Subnet](https://github.com/user-attachments/assets/0edf40ed-dc4a-44aa-a471-fe50596d5dce)
 
 #### Private Subnet Route Table
@@ -91,10 +98,13 @@ Create one public subnet and one private subnet within the VPC.
    - Name  `PrivateRouteTable`.
 
 **AWS Console:**
+
 ![Private Route Table](https://github.com/user-attachments/assets/e630cdb3-c0cd-444a-a144-6222662d5c1a)
 
 - Associate the route table with the **PrivateSubnet**:
+  
 **AWS Console:**
+  
  ![Associate Private Subnet](https://github.com/user-attachments/assets/84ec96cf-4289-49aa-9a2c-a3d1452d744d)
 
 ---
@@ -106,13 +116,17 @@ Create one public subnet and one private subnet within the VPC.
 - **Amazon Linux AMI**.
 - instance type (e.g., `t2.micro`).
 - Configure the instance to be in the **PublicSubnet**.
-   ![Public Instance Configuration](https://github.com/user-attachments/assets/a3076042-072c-4d86-81f2-9c147a1f3259)
+
+**AWS Console:**
+![Public Instance Configuration](https://github.com/user-attachments/assets/a3076042-072c-4d86-81f2-9c147a1f3259)
+
 - In the **Configure Security Group**, create a new security group (`PublicSecurityGroup`) with the following rules:
    - **Type**: SSH
    - **Source**: `0.0.0.0/0` (or your IP for limited access).
 - Launch the instance and download the private key (`.pem` file).
 
 **AWS Console:**
+
 ![Public Instance Launched](https://github.com/user-attachments/assets/0a7c4be6-d91c-47ff-b2eb-5313dd267eef)
 
 #### Launch Private EC2 Instance
@@ -121,7 +135,11 @@ Create one public subnet and one private subnet within the VPC.
    - **Type**: SSH
    - **Source**: Custom IP (select the public EC2 instance's security group).
 - Launch the instance and download its private key.
+- 
+**AWS Console:**
+  
 ![image](https://github.com/user-attachments/assets/910bd597-0a70-4432-8776-e96aae5ff9b9)
+
 ---
 
 ### Step 6:Test Set Up SSH Access via the Bastion Host
