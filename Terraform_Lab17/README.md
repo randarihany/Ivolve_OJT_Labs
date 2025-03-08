@@ -38,8 +38,11 @@ stress --cpu 2 --timeout 300  # create cpu load
 - Email Notification:
 ![image](https://github.com/user-attachments/assets/e827e9d6-2cb8-4efd-8532-9f4e7663c5b8)
 
+
 **4. Verify create_before_destroy Lifecycle Rule:**
+
 - Modify the EC2 Instance API so it will need tp be replaced:
+  
 ![image](https://github.com/user-attachments/assets/f9cb99af-6593-4970-9678-508965c6cfd8)
 
 
