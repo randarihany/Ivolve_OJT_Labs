@@ -78,6 +78,7 @@ Public EC2 Instance Public IP: The public IP address of the public EC2 instance.
 Public EC2 Instance Private IP: The private IP address of the public EC2 instance.
 Private EC2 Instance Private IP: The private IP address of the private EC2 instance.
 
+![image](https://github.com/user-attachments/assets/ffc540f6-6e02-475b-83cc-40d35e769c33)
 
 ## Output:
 ![image](https://github.com/user-attachments/assets/1f930a5f-c066-4a78-95ae-bdc67271d402)
