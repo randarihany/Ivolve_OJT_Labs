@@ -62,7 +62,7 @@ Launched in the public subnet with a public IP and Nginx installed using remote 
 
 ![image](https://github.com/user-attachments/assets/ab759ba3-7604-496a-aa01-c336f4898772)
 
-Nginx installed:
+**Nginx installed:**
 
 ![image](https://github.com/user-attachments/assets/0cc515e9-b6ea-43cc-82ba-a4bd65d1bb28)
 
