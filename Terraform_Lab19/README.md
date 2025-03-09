@@ -137,3 +137,12 @@ Screenshot: Add a screenshot of the Nginx welcome page accessed via the EC2 inst
 - 
 ![image](https://github.com/user-attachments/assets/e22c2b51-a509-409a-8416-3c1ed5662daf)
 
+- **Step 3: SSH into the EC2 Instance:**
+- **get the private key for server1:**
+```
+terraform output -raw server1_private_key > server1.pem
+chmod 400 server1.pem
+ssh -i server1.pem ec2-user@54.167.213.252
+```
+
+![image](https://github.com/user-attachments/assets/e93c9b89-f231-4fcf-b52a-26476bdc0ee5)
