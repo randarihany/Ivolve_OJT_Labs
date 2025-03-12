@@ -1,3 +1,8 @@
+### Lab 20: Jenkins Installation
+• install jenkins
+Install and configure Jenkins as a service
+
+
 add new inbounnd rule:
 ![image](https://github.com/user-attachments/assets/d02e377b-7cc6-4ef1-9cf0-92a95f5098fe)
 
