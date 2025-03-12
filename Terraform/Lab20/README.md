@@ -52,3 +52,7 @@ sudo more /var/lib/jenkins/secrets/initialAdminPassword
 **Jenkins is ready:**
 ![image](https://github.com/user-attachments/assets/2abb0a25-f1fd-4398-84b8-12d23818520a)
 
+
+reference:
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+
