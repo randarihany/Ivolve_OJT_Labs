@@ -55,6 +55,8 @@ kubectl cluster-info
 
 ![image](https://github.com/user-attachments/assets/fdbea181-dda2-4349-942f-ce7683787874)
 
+![image](https://github.com/user-attachments/assets/16d385b7-02a8-4bce-a714-d90a8131175f)
+
 
 
 
