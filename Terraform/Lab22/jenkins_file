@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE_NAME = 'my-nginx-image'
+        BUILD_CONTEXT = '/var/lib/docker/volumes/jenkins_data/_data/workspace/Git_Clone'
+    }
+
+    stages {
+        stage('Clone Git Repository') {
+            steps {
+                // If your repository is not already cloned, you can use this step
+                git 'https://github.com/IbrahimAdell/App1.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Run the Docker build command
+                    sh "sudo docker build -t ${DOCKER_IMAGE_NAME} ${BUILD_CONTEXT}"
+                }
+            }
+        }
+
+        stage('Post Build') {
+            steps {
+                echo 'Post-build actions go here (success, failure, etc.)'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'This will always run, after all stages.'
+        }
+        success {
+            echo 'This will run if the build is successful.'
+        }
+        failure {
+            echo 'This will run if the build fails.'
+        }
+    }
+}
