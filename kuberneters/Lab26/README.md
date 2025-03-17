@@ -1,10 +1,18 @@
-### Lab 26: Updating Applications and Rolling Back Changes
-﻿﻿Deploy NGINX with 3 replicas.
-﻿﻿Create a service to expose NGINX deployment.
-﻿﻿Use port forwarding to access NGINX service locally.
-﻿﻿Update NGINX image to Apache.
-﻿﻿View deployment's rollout history.
-﻿﻿Roll back NGINX deployment to the previous image version and Monitor pod status.
+# Lab 26: Updating Applications and Rolling Back Changes with Kubernetes
+
+- ﻿﻿Deploy NGINX with 3 replicas.
+﻿﻿- Create a service to expose NGINX deployment.
+﻿﻿- Use port forwarding to access NGINX service locally.
+﻿﻿- Update NGINX image to Apache.
+﻿﻿- View deployment's rollout history.
+﻿﻿- Roll back NGINX deployment to the previous image version and Monitor pod status.
+  
+---
+## Step 1: Deploy NGINX with 3 Replicas
+
+### Create the NGINX Deployment YAML
+
+Create a file named `nginx-deployment.yaml` for the NGINX deployment and apply.
 
 ```
 kubectl apply -f nginx-deployment.yaml
@@ -14,16 +22,29 @@ kubectl get pods
 ```
 ![image](https://github.com/user-attachments/assets/db4ae34a-2f78-4afc-b563-6ea2c41c5abe)
 
+## Step 2: Create a Service to Expose the NGINX Deployment
+
+Create the NGINX Service YAML
+Create a file named nginx-service.yaml to define the service that exposes the NGINX deployment and apply.
+
 ```
 kubectl apply -f nginx-service.yaml
- kubectl get svc
+kubectl get svc
 ```
 
 ![image](https://github.com/user-attachments/assets/2a72eb79-18b7-40bf-907c-a8b09ec1eebd)
 
 ![image](https://github.com/user-attachments/assets/5891c20b-cc6d-4f4e-8a4d-6fd6f627d6dc)
 
-- Step 4: Update NGINX image to Apache
+## Step 3: Use Port Forwarding to Access NGINX Service Locally
+Set Up Port Forwarding
+Use kubectl to forward the NGINX service to your local machine:
+
+```
+kubectl port-forward svc/nginx-service 8080:80
+```
+
+## Step 4: Update NGINX image to Apache
 Edit the NGINX deployment to use the Apache image:
 
 ```
