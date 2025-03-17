@@ -6,6 +6,11 @@
 ﻿﻿- Update NGINX image to Apache.
 ﻿﻿- View deployment's rollout history.
 ﻿﻿- Roll back NGINX deployment to the previous image version and Monitor pod status.
+
+* Item 1
+* Item 2
+* Item 3
+
   
 ---
 ## Step 1: Deploy NGINX with 3 Replicas
