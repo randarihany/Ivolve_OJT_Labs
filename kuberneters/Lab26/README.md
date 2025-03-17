@@ -55,6 +55,7 @@ kubectl set image deployment/nginx-deployment nginx=httpd:latest
 
 ![image](https://github.com/user-attachments/assets/a43bed06-3fe1-41ef-810e-bc3a5fb423a8)
 
+## Step 5: View Deployment's Rollout History
 - view the rollout history of the deployment, use the following command:
 
 ```
@@ -67,10 +68,13 @@ kubectl rollout history deployment/nginx-deployment
 
 ![image](https://github.com/user-attachments/assets/11afac29-08a0-495e-a0eb-d25d146caa7d)
 
-Step 6: Roll back NGINX deployment to the previous image version
+## Step 6: Roll back NGINX deployment to the previous image version
 To roll back to the previous version of the deployment (NGINX), use:
 
 ![image](https://github.com/user-attachments/assets/81028775-e931-413c-9df5-d15475a97ff6)
+
+
+## Step 7:Describe a Pod for Detailed Information
 
 ```
 kubectl describe pod nginx-deployment-96b9d695-szkdp
