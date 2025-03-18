@@ -1,4 +1,4 @@
-### Lab 26: Updating Applications and Rolling Back Changes with Kubernetes:
+# Lab 26: Updating Applications and Rolling Back Changes with Kubernetes:
 
 - Deploy NGINX with 3 replicas
 - Create a service to expose NGINX deployment
@@ -8,7 +8,7 @@
 - Roll back NGINX deployment to the previous image version and Monitor pod status
 
 ---
-# Step 1: Deploy NGINX with 3 Replicas
+### Step 1: Deploy NGINX with 3 Replicas
 - Create the NGINX Deployment YAML
 - Create a file named nginx-deployment.yaml for the NGINX deployment and apply.
 
