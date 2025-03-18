@@ -4,6 +4,8 @@
 - ﻿﻿Write a YAML file to define a service for the MySQL Statefulset.
 
 ---
+:star: This is important!
+<span style="color:red"> 1 - Deployment vs. StatefulSet Comparison.</span>
 
 - 1. Deployment vs. StatefulSet Comparison
 
