@@ -1,82 +1,157 @@
-### Lab 26: Updating Applications and Rolling Back Changes with Kubernetes
+# Lab 26: Updating Applications and Rolling Back Changes with Kubernetes
 
-* Item 1 Deploy NGINX with 3 replicas
-* Item 2 Create a service to expose NGINX deployment
-* Item 3 Use port forwarding to access NGINX service locally
-* Update NGINX image to Apache
-* View deployment's rollout history
-* Roll back NGINX deployment to the previous image version and Monitor pod status
+This guide will walk you through the steps to complete Lab 26, which focuses on updating applications, rolling back changes, and monitoring pod statuses in a Kubernetes cluster.
 
+## Prerequisites
+
+Ensure you have the following before starting:
+
+- A working Kubernetes cluster (local, such as Minikube, or cloud-based like GKE, EKS, or AKS).
+- `kubectl` installed and configured to interact with your Kubernetes cluster.
+
+---
 
 ## Step 1: Deploy NGINX with 3 Replicas
 
-- Create a file named `nginx-deployment.yaml` for the NGINX deployment and apply.
+### Create the NGINX Deployment YAML
 
-```
+Create a file named `nginx-deployment.yaml` for the NGINX deployment:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+Apply the YAML File
+Run the following command to apply the deployment:
+
+bash
+Copy
 kubectl apply -f nginx-deployment.yaml
+Verify the Deployment
+Check that the deployment and pods were successfully created:
+
+bash
+Copy
 kubectl get deployments
 kubectl get pods
-```
-![image](https://github.com/user-attachments/assets/db4ae34a-2f78-4afc-b563-6ea2c41c5abe)
+Step 2: Create a Service to Expose the NGINX Deployment
+Create the NGINX Service YAML
+Create a file named nginx-service.yaml to define the service that exposes the NGINX deployment:
 
-## Step 2: Create a Service to Expose the NGINX Deployment
+yaml
+Copy
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+Apply the YAML File
+Run the following command to apply the service:
 
-- Create the NGINX Service YAML
-- Create a file named nginx-service.yaml to define the service that exposes the NGINX deployment and apply.
-
-```
+bash
+Copy
 kubectl apply -f nginx-service.yaml
-kubectl get svc
-```
+Verify the Service
+Check if the service was created successfully:
 
-![image](https://github.com/user-attachments/assets/2a72eb79-18b7-40bf-907c-a8b09ec1eebd)
+bash
+Copy
+kubectl get services
+Step 3: Use Port Forwarding to Access NGINX Service Locally
+Set Up Port Forwarding
+Use kubectl to forward the NGINX service to your local machine:
 
-## Step 3: Use Port Forwarding to Access NGINX Service Locally
-- Set Up Port Forwarding
-- Use kubectl to forward the NGINX service to your local machine:
-
-```
+bash
+Copy
 kubectl port-forward svc/nginx-service 8080:80
-```
-![image](https://github.com/user-attachments/assets/5891c20b-cc6d-4f4e-8a4d-6fd6f627d6dc)
+Access NGINX Locally
+Open your browser and navigate to http://localhost:8080. You should see the NGINX welcome page.
 
-## Step 4: Update NGINX image to Apache
-- Edit the NGINX deployment to use the Apache image:
+Step 4: Update NGINX Image to Apache
+Update the Deployment to Use Apache
+Edit the NGINX deployment to use the Apache HTTP Server image instead of NGINX:
 
-```
+bash
+Copy
 kubectl set image deployment/nginx-deployment nginx=httpd:latest
-```
+Verify the Update
+Check the status of the deployment to ensure it was updated:
 
-![image](https://github.com/user-attachments/assets/a6bc86f0-461d-4433-b12f-b468d8c55f5b)
+bash
+Copy
+kubectl rollout status deployment/nginx-deployment
+Check Pods to Ensure Apache is Running
+Verify that the NGINX containers were replaced by Apache containers:
 
-## Step 5: View Deployment's Rollout History
-- view the rollout history of the deployment, use the following command:
+bash
+Copy
+kubectl get pods
+Access Apache Locally
+Open your browser and navigate to http://localhost:8080. You should now see the Apache welcome page instead of the NGINX page.
 
-```
+Step 5: View Deployment's Rollout History
+View Rollout History
+To view the rollout history of the NGINX deployment, use the following command:
+
+bash
+Copy
 kubectl rollout history deployment/nginx-deployment
-```
+This will show you all versions of the deployment, including the current and previous ones.
 
-![image](https://github.com/user-attachments/assets/a43bed06-3fe1-41ef-810e-bc3a5fb423a8)
+Step 6: Roll Back the NGINX Deployment to the Previous Image Version
+Rollback the Deployment
+To roll back the deployment to the previous NGINX version, use:
 
-![image](https://github.com/user-attachments/assets/bb05c836-e7cc-4207-87e4-56e8d7c7e7fa)
+bash
+Copy
+kubectl rollout undo deployment/nginx-deployment
+Verify the Rollback
+Check the pods to ensure the deployment was rolled back to the previous version (NGINX):
 
-- Apache Output:
+bash
+Copy
+kubectl get pods
+kubectl describe pod <nginx-pod-name>
+Access NGINX Locally
+Open your browser and navigate to http://localhost:8080. You should see the NGINX welcome page again.
 
-![image](https://github.com/user-attachments/assets/11afac29-08a0-495e-a0eb-d25d146caa7d)
+Step 7: Monitor Pod Status
+Monitor Pod Status in Real-Time
+To monitor the status of your pods, use the -w flag to watch for changes:
 
-## Step 6: Roll back NGINX deployment to the previous image version
-- To roll back to the previous version of the deployment (NGINX), use:
+bash
+Copy
+kubectl get pods -w
+This will display real-time updates of the pods' status as they are created, updated, or deleted.
 
-![image](https://github.com/user-attachments/assets/81028775-e931-413c-9df5-d15475a97ff6)
+Describe a Pod for Detailed Information
+To get more detailed information about a specific pod, use:
 
-
-## Step 7:Describe a Pod for Detailed Information
-
-```
-kubectl describe pod nginx-deployment-96b9d695-szkdp
-```
-![image](https://github.com/user-attachments/assets/b2a9a241-0abd-46ed-b1a5-2e7a85370c13)
-
-
-
-
+bash
+Copy
+kubectl describe pod <nginx-pod-name>
+Conclusion
+In this lab, you deployed an NGINX application with 3 replicas, exposed it using a service, updated it to use Apache, viewed the deployment's rollout history, and rolled it back to the previous version. You also monitored the pod statuses in real-time.
