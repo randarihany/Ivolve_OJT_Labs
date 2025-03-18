@@ -27,6 +27,11 @@ kubectl port-forward svc/nginx-service 8080:80
 
 
 
+![image](https://github.com/user-attachments/assets/fe9517b1-46ea-4adc-99d5-92d315077767)
+
+
+![image](https://github.com/user-attachments/assets/30250103-7c6f-4bcf-959c-75ccaabfa95d)
+
 
 
 
