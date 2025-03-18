@@ -35,23 +35,97 @@ spec:
         - containerPort: 80
 ```
 
-Create a deployment YAML file (nginx-deployment.yaml):
+Apply a deployment YAML file (nginx-deployment.yaml):
 ```
 kubectl apply -f nginx-deployment.yaml 
 kubectl get pods
 ```
 ![image](https://github.com/user-attachments/assets/044aeb42-b1dc-4a45-898d-a9cc5b050318)
 
+### Step 2: Create an Nginx Service
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: nginx  # Match the pods with the "app: nginx" label
+  ports:
+    - protocol: TCP
+      port: 80        
+      targetPort: 80  
+  type: ClusterIP 
+```
+
+```
+kubectl apply -f nginx-service.yaml 
+kubectl get svc
+```
+
+- Port-forward the pod to your local machine:
 ```
 kubectl port-forward svc/nginx-service 8080:80
 ```
 
+### Step 3: Exec into the Pod and Create a File
+
+1- Get the pod name.
+2- Exec into the pod.
+3- Inside the pod, create the file.
+
+```
+kubectl get pods
+kubectl exec -it nginx-deployment- -- /bin/bash
+echo "hello iVolve" > /usr/share/nginx/html/hello.txt
+```
+
+### Step 4:  Verify the File is Served
+
 ![image](https://github.com/user-attachments/assets/d2cf858d-f2fc-4042-aee6-031f39337099)
 
+### Step 5: Delete the NGINX Pod and Wait for a New One
+- Exec into the New Pod and Verify the File is Gone
 
 ![image](https://github.com/user-attachments/assets/559ae7a6-c18f-421c-a8b8-4d20f69133d5)
 
+### Step 6: Create a Persistent Volume Claim (PVC)
 
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
+- Apply pvc
+
+```
+kubectl apply -f nginx-pvc.yaml
+```
+
+### Step 7: Modify the Deployment to Attach the PVC
+
+```
+        volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: nginx-storage
+      volumes:
+      - name: nginx-storage
+        persistentVolumeClaim:
+          claimName: nginx-pvc
+```
+
+```
+kubectl apply -f nginx-deployment.yaml
+```
+### Step 8: Repeat the Previous Steps and Verify File Persistence
 
 ![image](https://github.com/user-attachments/assets/fe9517b1-46ea-4adc-99d5-92d315077767)
 
