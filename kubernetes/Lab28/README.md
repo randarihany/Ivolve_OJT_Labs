@@ -9,7 +9,33 @@
 * Repeat the previous steps and Verify the file persists across pod deletions.
 * Make a comparison between PV, PVC, and StorageClass.
 
+---
 
+### Step 1: Create an Nginx Deployment with 1 Replica
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+```
+
+Create a deployment YAML file (nginx-deployment.yaml):
 ```
 kubectl apply -f nginx-deployment.yaml 
 kubectl get pods
