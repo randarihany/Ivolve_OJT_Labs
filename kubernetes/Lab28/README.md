@@ -16,6 +16,9 @@ kubectl get pods
 ```
 ![image](https://github.com/user-attachments/assets/044aeb42-b1dc-4a45-898d-a9cc5b050318)
 
+```
+kubectl port-forward svc/nginx-service 8080:80
+```
 
 ![image](https://github.com/user-attachments/assets/d2cf858d-f2fc-4042-aee6-031f39337099)
 
