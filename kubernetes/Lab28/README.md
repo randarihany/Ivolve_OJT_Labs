@@ -35,7 +35,7 @@ spec:
         - containerPort: 80
 ```
 
--Apply a deployment YAML file:
+- Apply a deployment YAML file:
 
 ```
 kubectl apply -f nginx-deployment.yaml 
@@ -73,9 +73,9 @@ kubectl port-forward svc/nginx-service 8080:80
 
 ### Step 3: Exec into the Pod and Create a File
 
-1- Get the pod name
-2- Exec into the pod
-3- Inside the pod, create the file
+* Get the pod name
+* Exec into the pod
+* Inside the pod, create the file
 
 ```
 kubectl get pods
