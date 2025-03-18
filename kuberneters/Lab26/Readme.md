@@ -1,4 +1,4 @@
-#### Lab 26: Updating Applications and Rolling Back Changes with Kubernetes:
+### Lab 26: Updating Applications and Rolling Back Changes with Kubernetes:
 
 - Deploy NGINX with 3 replicas
 - Create a service to expose NGINX deployment
