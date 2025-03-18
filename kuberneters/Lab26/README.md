@@ -35,7 +35,6 @@ kubectl get svc
 ![image](https://github.com/user-attachments/assets/2a72eb79-18b7-40bf-907c-a8b09ec1eebd)
 
 
-
 ## Step 3: Use Port Forwarding to Access NGINX Service Locally
 Set Up Port Forwarding
 Use kubectl to forward the NGINX service to your local machine:
@@ -55,7 +54,6 @@ kubectl set image deployment/nginx-deployment nginx=httpd:latest
 
 ![image](https://github.com/user-attachments/assets/a6bc86f0-461d-4433-b12f-b468d8c55f5b)
 
-![image](https://github.com/user-attachments/assets/a43bed06-3fe1-41ef-810e-bc3a5fb423a8)
 
 ## Step 5: View Deployment's Rollout History
 - view the rollout history of the deployment, use the following command:
@@ -63,6 +61,8 @@ kubectl set image deployment/nginx-deployment nginx=httpd:latest
 ```
 kubectl rollout history deployment/nginx-deployment
 ```
+
+![image](https://github.com/user-attachments/assets/a43bed06-3fe1-41ef-810e-bc3a5fb423a8)
 
 ![image](https://github.com/user-attachments/assets/bb05c836-e7cc-4207-87e4-56e8d7c7e7fa)
 
