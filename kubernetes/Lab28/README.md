@@ -135,6 +135,7 @@ kubectl apply -f nginx-deployment.yaml
 
 ![image](https://github.com/user-attachments/assets/30250103-7c6f-4bcf-959c-75ccaabfa95d)
 
+## A comparison between PV, PVC, and StorageClass.
 
 
 
