@@ -1,6 +1,5 @@
 ### Lab 26: Updating Applications and Rolling Back Changes with Kubernetes
 
-
 * Item 1 Deploy NGINX with 3 replicas
 * Item 2 Create a service to expose NGINX deployment
 * Item 3 Use port forwarding to access NGINX service locally
