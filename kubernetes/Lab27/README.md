@@ -4,14 +4,9 @@
 - ﻿﻿Write a YAML file to define a service for the MySQL Statefulset.
 
 ---
-:blue_circle: 
-:blue_circle: 1 Deployment vs. StatefulSet Comparison: 
-blue_circle: 🔵 - Blue Circle
-:green_circle: 🟢 - Green Circle
-:yellow_circle: 🟡 - Yellow Circle
-:orange_circle: 🟠 - Orange Circle
-:purple_circle: 🟣 - Purple Circle
 
+ 🔵 Deployment vs. StatefulSet Comparison: 
+ 
 ## StatefulSets:
 - Designed for running stateful components of an app.
 - Creates a set of identically configured Pods with unique, non-interchangeable identities.
@@ -26,10 +21,12 @@ blue_circle: 🔵 - Blue Circle
 
 ![image](https://github.com/user-attachments/assets/a1da9bad-8d76-49be-b771-b540a2ce1319)
 
-:blue_circle: Create a YAML File for MySQL StatefulSet with 3 Replicas
+🔵 **Create a YAML File for MySQL StatefulSet with 3 Replicas:**
+
 YAML configuration for creating a StatefulSet for a MySQL database with 3 replicas.
 
-:blue_circle: Write a YAML File to Define a Service for the MySQL StatefulSet
+🔵 **Write a YAML File to Define a Service for the MySQL StatefulSet:**
+
 To enable the pods in the StatefulSet to communicate with each other and be accessible externally (if necessary), you need to define a service. 
 YAML file to define a headless service for the StatefulSet.
 
