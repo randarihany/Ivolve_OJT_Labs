@@ -4,8 +4,8 @@
 - ﻿﻿Write a YAML file to define a service for the MySQL Statefulset.
 
 ---
-:star: This is important!
-:blue_circle: **1 Deployment vs. StatefulSet Comparison: **
+
+:blue_circle: 1 Deployment vs. StatefulSet Comparison: 
 
 ## StatefulSets:
 - Designed for running stateful components of an app.
