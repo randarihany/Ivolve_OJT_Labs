@@ -16,11 +16,7 @@ metadata:
   name: service-account
   namespace: default
 ```
-
-- Apply Service Account:
-
-- Generate a Token for the Service Account:
-manully generate token.
+- Generate a Token for the Service Account:(manully generate token)
 
 ```
 apiVersion: v1
@@ -32,6 +28,8 @@ metadata:
 type: kubernetes.io/service-account-token
 ```
 
+- Apply Service Account:
+  
 ```
 kubectl apply -f serviceaccount.yaml
 kubectl apply -f service-account-token.yaml
