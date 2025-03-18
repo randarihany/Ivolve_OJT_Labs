@@ -6,6 +6,11 @@
 ---
 :blue_circle: 
 :blue_circle: 1 Deployment vs. StatefulSet Comparison: 
+blue_circle: 🔵 - Blue Circle
+:green_circle: 🟢 - Green Circle
+:yellow_circle: 🟡 - Yellow Circle
+:orange_circle: 🟠 - Orange Circle
+:purple_circle: 🟣 - Purple Circle
 
 ## StatefulSets:
 - Designed for running stateful components of an app.
