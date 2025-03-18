@@ -56,6 +56,7 @@ kubectl rollout history deployment/nginx-deployment
 ![image](https://github.com/user-attachments/assets/793d18ae-09bb-427b-9c26-dae305991c01)
 
 - Apache Output:
+  
 ![image](https://github.com/user-attachments/assets/6ff30bfd-b4fb-4388-8d5a-2f673a1cfe42)
 
 
