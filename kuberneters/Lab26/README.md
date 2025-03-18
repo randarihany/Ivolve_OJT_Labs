@@ -34,7 +34,7 @@ kubectl get svc
 
 ![image](https://github.com/user-attachments/assets/2a72eb79-18b7-40bf-907c-a8b09ec1eebd)
 
-![image](https://github.com/user-attachments/assets/5891c20b-cc6d-4f4e-8a4d-6fd6f627d6dc)
+
 
 ## Step 3: Use Port Forwarding to Access NGINX Service Locally
 Set Up Port Forwarding
@@ -43,6 +43,8 @@ Use kubectl to forward the NGINX service to your local machine:
 ```
 kubectl port-forward svc/nginx-service 8080:80
 ```
+
+![image](https://github.com/user-attachments/assets/5891c20b-cc6d-4f4e-8a4d-6fd6f627d6dc)
 
 ## Step 4: Update NGINX image to Apache
 Edit the NGINX deployment to use the Apache image:
