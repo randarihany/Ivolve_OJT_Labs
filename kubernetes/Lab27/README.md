@@ -5,9 +5,7 @@
 
 ---
 :star: This is important!
-<span style="color:red"> 1 - Deployment vs. StatefulSet Comparison.</span>
-
-- 1. Deployment vs. StatefulSet Comparison
+:blue_circle: **1 Deployment vs. StatefulSet Comparison: **
 
 ## StatefulSets:
 - Designed for running stateful components of an app.
@@ -15,6 +13,7 @@
 - Each Pod is assigned its own persistent storage volume, which is reattached on restarts.
 - Suitable for applications that require stable network identities and storage persistence (e.g., databases).
 - Allows other applications to reliably interact with the primary instance.
+- 
 ## Deployments:
 - Used for running stateless applications.
 - Benefits from declarative updates and rollbacks.
@@ -22,11 +21,12 @@
 
 ![image](https://github.com/user-attachments/assets/a1da9bad-8d76-49be-b771-b540a2ce1319)
 
-- 2. Create a YAML File for MySQL StatefulSet with 3 Replicas
-Below is a YAML configuration for creating a StatefulSet for a MySQL database with 3 replicas:
+:blue_circle: Create a YAML File for MySQL StatefulSet with 3 Replicas
+YAML configuration for creating a StatefulSet for a MySQL database with 3 replicas.
 
-- 3. Write a YAML File to Define a Service for the MySQL StatefulSet
-To enable the pods in the StatefulSet to communicate with each other and be accessible externally (if necessary), you need to define a service. Below is a YAML file to define a headless service for the StatefulSet.
+:blue_circle: Write a YAML File to Define a Service for the MySQL StatefulSet
+To enable the pods in the StatefulSet to communicate with each other and be accessible externally (if necessary), you need to define a service. 
+YAML file to define a headless service for the StatefulSet.
 
 - Deploy the StatefulSet and Service:
 ```
