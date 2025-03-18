@@ -7,14 +7,14 @@
 
  🔵 Deployment vs. StatefulSet Comparison: 
  
-## StatefulSets:
+### StatefulSets:
 - Designed for running stateful components of an app.
 - Creates a set of identically configured Pods with unique, non-interchangeable identities.
 - Each Pod is assigned its own persistent storage volume, which is reattached on restarts.
 - Suitable for applications that require stable network identities and storage persistence (e.g., databases).
 - Allows other applications to reliably interact with the primary instance.
-- 
-## Deployments:
+  
+### Deployments:
 - Used for running stateless applications.
 - Benefits from declarative updates and rollbacks.
 - The Deployment controller handles orchestration, allocating Pods to the most appropriate Nodes.
