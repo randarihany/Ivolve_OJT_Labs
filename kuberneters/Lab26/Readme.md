@@ -73,4 +73,4 @@ kubectl describe pod nginx-deployment-96b9d695-szkdp
 
 ![image](https://github.com/user-attachments/assets/256dfb2b-20d6-48ad-b7f7-79c1068d5371)
 
-image
+
