@@ -21,14 +21,18 @@
 
 ![image](https://github.com/user-attachments/assets/a1da9bad-8d76-49be-b771-b540a2ce1319)
 
-🔵 **Create a YAML File for MySQL StatefulSet with 3 Replicas:**
+🔵 **A YAML File for MySQL StatefulSet with 3 Replicas:**
 
 YAML configuration for creating a StatefulSet for a MySQL database with 3 replicas.
 
-🔵 **Write a YAML File to Define a Service for the MySQL StatefulSet:**
+GO TO: kubernetes/Lab27/mysql-StatefulSet.yaml
+
+🔵 **A YAML File to Define a Service for the MySQL StatefulSet:**
 
 To enable the pods in the StatefulSet to communicate with each other and be accessible externally (if necessary), you need to define a service. 
 YAML file to define a headless service for the StatefulSet.
+
+GO TO: kubernetes/Lab27/mysql-StatefulSet-service.yaml
 
 - Deploy the StatefulSet and Service:
 ```
