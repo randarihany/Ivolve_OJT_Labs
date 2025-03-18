@@ -1,20 +1,5 @@
 # Lab 26: Updating Applications and Rolling Back Changes with Kubernetes
 
-*﻿﻿ Deploy NGINX with 3 replicas
-﻿﻿* Create a service to expose NGINX deployment
-﻿﻿* Use port forwarding to access NGINX service locally
-﻿﻿* Update NGINX image to Apache
-﻿﻿* View deployment's rollout history
-* Roll back NGINX deployment to the previous image version and Monitor pod status
-* Item 1
-* Item 2
-* Item 3
-*﻿﻿ Deploy NGINX with 3 replicas
-﻿﻿* Create a service to expose NGINX deployment
-﻿﻿* Use port forwarding to access NGINX service locally
-﻿﻿* Update NGINX image to Apache
-﻿﻿* View deployment's rollout history
-
 
 +﻿﻿ Deploy NGINX with 3 replicas
 ﻿﻿+ Create a service to expose NGINX deployment
@@ -23,7 +8,6 @@
 ﻿﻿+ View deployment's rollout history
 + Roll back NGINX deployment to the previous image version and Monitor pod status
 
----
 ## Step 1: Deploy NGINX with 3 Replicas
 
 ### Create the NGINX Deployment YAML
