@@ -35,7 +35,8 @@ spec:
         - containerPort: 80
 ```
 
-Apply a deployment YAML file (nginx-deployment.yaml):
+-Apply a deployment YAML file:
+
 ```
 kubectl apply -f nginx-deployment.yaml 
 kubectl get pods
@@ -65,15 +66,16 @@ kubectl get svc
 ```
 
 - Port-forward the pod to your local machine:
+  
 ```
 kubectl port-forward svc/nginx-service 8080:80
 ```
 
 ### Step 3: Exec into the Pod and Create a File
 
-1- Get the pod name.
-2- Exec into the pod.
-3- Inside the pod, create the file.
+1- Get the pod name
+2- Exec into the pod
+3- Inside the pod, create the file
 
 ```
 kubectl get pods
@@ -86,6 +88,7 @@ echo "hello iVolve" > /usr/share/nginx/html/hello.txt
 ![image](https://github.com/user-attachments/assets/d2cf858d-f2fc-4042-aee6-031f39337099)
 
 ### Step 5: Delete the NGINX Pod and Wait for a New One
+
 - Exec into the New Pod and Verify the File is Gone
 
 ![image](https://github.com/user-attachments/assets/559ae7a6-c18f-421c-a8b8-4d20f69133d5)
