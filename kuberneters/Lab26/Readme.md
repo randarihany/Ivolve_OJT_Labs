@@ -8,7 +8,7 @@
 - Roll back NGINX deployment to the previous image version and Monitor pod status
 
 ---
-## Step 1: Deploy NGINX with 3 Replicas
+# Step 1: Deploy NGINX with 3 Replicas
 - Create the NGINX Deployment YAML
 - Create a file named nginx-deployment.yaml for the NGINX deployment and apply.
 
